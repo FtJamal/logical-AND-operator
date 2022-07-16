@@ -1,0 +1,119 @@
+<!DphysicsYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <h1>Marksheet</h1>
+
+
+        <Form onsubmit="calculate(); return false;">
+            <label for="english">English:</label>
+            <input type="number" id="english" required placeholder="out of 100">
+            <br>
+            <br>
+            <label for="urdu">Urdu:</label>
+            <input type="number" id="urdu" required placeholder="out of 100">
+            <br>
+            <br>
+            <label for="maths">Maths:</label>
+            <input type="number" id="maths" required placeholder="out of 100">
+            <br>
+            <br>
+            <label for="islamiat">Islamiat:</label>
+            <input type="number" id="islamiat" required placeholder="out of 100">
+            <br>
+            <br>
+            <label for="science">Science:</label>
+            <input type="number" id="science" required placeholder="out of 100">
+            <br>
+            <br>
+            <label for="englishgrammer">English Grammer:</label>
+            <input type="number" id="englishgrammer" required placeholder="out of 100">
+            <br>
+            <br>
+            <label for="drawing">Drawing:</label>
+            <input type="number" id="drawing" required placeholder="out of 100">
+            <br>
+            <br>
+            <label for="economics">Economics:</label>
+            <input type="number" id="economics" required placeholder="out of 100">
+            <br>
+            <br>
+            <label for="urdugrammer">Urdu Grammer:</label>
+            <input type="number" id="urdugrammer" required placeholder="out of 100">
+            <br>
+            <br>
+            <label for="physics">Physics:</label>
+            <input type="number" id="physics" required placeholder="out of 100">
+            <br>
+            <br>
+            <span><button type="submit">Check</button> <button type="reset">Reset</button></span>
+
+
+        </Form>
+        <h4 id="totalMarks"></h4>
+        <h4 id="marksObtained"></h4>
+        <h4 id="percentage"></div>
+        <h3 id="result"></h3>
+        <script>
+            function calculate() {
+                let english = +document.querySelector("#english").value;
+                let urdu = +document.querySelector("#urdu").value;
+                let maths = +document.querySelector("#maths").value;
+                let islamiat = +document.querySelector("#islamiat").value;
+                let science = +document.querySelector("#science").value;
+                let englishgrammer = +document.querySelector("#englishgrammer").value;
+                let drawing = +document.querySelector("#drawing").value;
+                let economics = +document.querySelector("#economics").value;
+                let urdugrammer = +document.querySelector("#urdugrammer").value;
+                let physics = +document.querySelector("#physics").value;
+
+                let marksObtained = (english + urdu + maths + islamiat + science + englishgrammer + drawing + economics + urdugrammer + physics)
+                let result1 = document.querySelector("#marksObtained")
+                    .innerHTML = "Obtained Marks=" + marksObtained;
+                let totalMarks = document.querySelector("#totalMarks")
+                    .innerHTML = "Total Marks=" + 1000;
+
+                let percentage = marksObtained / 1000 * 100
+                let result2 = document.querySelector("#percentage")
+                    .innerHTML = "Your percentange is " + percentage + "%";
+
+                if (percentage >= 80 && percentage < 100) {
+                    document.querySelector("#result")
+                        .innerHTML = "Congratulations!!!You got A1 Grade...Superb!"
+                } else if (percentage >= 70 && percentage < 80) {
+                    document.querySelector("#result")
+                        .innerHTML = "Congratulations!!! You have A Grade...You are  Excellent!"
+                } else if (percentage >= 60 && percentage < 70) {
+                    document.querySelector("#result")
+                        .innerHTML = "B Grade"
+                } else if (percentage >= 50 && percentage < 60) {
+                    document.querySelector("#result")
+                        .innerHTML = "C Grade"
+                } else if (percentage >= 40 && percentage < 50) {
+                    document.querySelector("#result")
+                        .innerHTML = "D Grade"
+                } else if (percentage >= 35 && percentage < 40) {
+                    document.querySelector("#result")
+                        .innerHTML = "E Grade"
+                } else {
+                    document.querySelector("#result")
+                        .innerHTML = "Fail"
+                }
+
+
+            }
+        </script>
+
+
+        </form>
+
+
+
+    </body>
